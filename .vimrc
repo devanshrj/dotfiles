@@ -129,12 +129,19 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 " Launch config
 "--------------------
+" auto install for vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Using Plug as plugin manager
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
 Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'godlygeek/tabular'
@@ -155,7 +162,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'frazrepo/vim-rainbow'
 
 " Language specific
-Plug 'fatih/vim-go'
 Plug 'plasticboy/vim-markdown'
 Plug 'Vimjas/vim-python-pep8-indent'
 
@@ -163,6 +169,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 " Plug 'scrooloose/nerdtree'
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'xuyuanp/nerdtree-git-plugin'
+
 call plug#end()
 
 " gruvbox-material
@@ -230,35 +237,34 @@ let g:lightline = {
 
 " coc.nvim
 " ------------------
-let g:coc_global_extensions = [
-\ 'coc-clangd',
-\ 'coc-go',
-\ 'coc-java',
-\ 'coc-json', 
-\ 'coc-pairs',
-\ 'coc-prettier', 
-\ 'coc-python', 
-\ ]
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-" Remap for rename current word
-nmap <F2> <Plug>(coc-rename)
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" Use auocmd to force lightline update.
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+" let g:coc_global_extensions = [
+" \ 'coc-clangd',
+" \ 'coc-java',
+" \ 'coc-json', 
+" \ 'coc-pairs',
+" \ 'coc-prettier', 
+" \ 'coc-python', 
+" \ ]
+" 
+" " Use <c-space> to trigger completion.
+" inoremap <silent><expr> <c-space> coc#refresh()
+" " Use `[g` and `]g` to navigate diagnostics
+" nmap <silent> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" " Remap keys for gotos
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+" " Highlight symbol under cursor on CursorHold
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+" " Remap for rename current word
+" nmap <F2> <Plug>(coc-rename)
+" " Use `:Format` to format current buffer
+" command! -nargs=0 Format :call CocAction('format')
+" " Use `[g` and `]g` to navigate diagnostics
+" " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+" nmap <silent> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" " Use auocmd to force lightline update.
+" autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
