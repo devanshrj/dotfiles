@@ -29,10 +29,11 @@ chmod +x install.sh
 Install:
 - [XCode Command Line tools](https://stackoverflow.com/questions/9329243/how-to-install-xcode-command-line-tools)
 - [Homebrew](https://brew.sh)
-- [Alacritty](https://github.com/alacritty/alacritty)
-- Git
+- [Alacritty](https://github.com/alacritty/alacritty) (`brew` will install)
+- Git (`brew` will install)
   - [Git first time setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
   - [Git Credential Manager](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git)
+  - GCM is good enough, use that!
 
 ## Resources
 - [awesome-dotfiles](https://github.com/webpro/awesome-dotfiles)

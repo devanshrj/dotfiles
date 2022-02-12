@@ -15,4 +15,4 @@
 [pager]
 	log = false
 [credential]
-	helper = osxkeychain
+	helper = manager-core
