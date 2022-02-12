@@ -23,13 +23,12 @@ brew "tmux"
 brew "vim"
 brew "wget"
 brew "zsh"
-brew "zsh-syntax-highlighting"
 
 # Apps
-cask "alacritty"
-cask "discord"
-cask "google-chrome"
-cask 'the-unarchiver'
+# cask "alacritty"
+# cask "discord"
+# cask "google-chrome"
+# cask 'the-unarchiver'
 
 # Fonts
 cask "font-hack-nerd-font"
