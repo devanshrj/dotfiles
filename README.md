@@ -5,11 +5,17 @@ I created this repo primarily to store my dotfiles and (hopefully) a guide to se
 They should be cloned to the home directory so that the path is `~/.dotfiles/`. The included setup script creates symlinks from the home directory to the files which are located in `~/.dotfiles/`. The setup script is smart enough to back up existing dotfiles into a `~/.dotfiles_old/` directory.
 
 The install script (`install.sh`) will:
-1. Check if `oh-my-zsh` is installed, and install if not
-2. Check if `Homebrew` is installed, and install if not
+1. Check if `oh-my-zsh` is installed, install if not
+2. Check if `Homebrew` is installed, install if not
 3. Install all `brew` dependencies
-4. Back up existing dotfiles in the home directory to `~/.dotfiles_old/`
-5. Create symlinks to the dotfiles in `~/.dotfiles/` to the home directory
+4. Clone `oh-my-szh` plugins
+5. Back up existing dotfiles in the home directory to `~/.dotfiles_old/`
+6. Create symlinks to the dotfiles in `~/.dotfiles/` to the home directory
+
+After running the script:
+1. Install [Meslo fonts](https://github.com/romkatv/powerlevel10k#manual-font-installation) if using Alacritty
+2. Run installation process given below
+3. Run `p10k configure` to configure Powerlevel10k if not auto-prompted
 
 ## Installation
 ```
