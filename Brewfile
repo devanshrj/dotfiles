@@ -14,8 +14,6 @@ brew "git"
 brew "gcc"
 # brew "llvm"
 # brew "python@3.8"
-# brew "rbenv"
-# brew "ruby"
 
 # Shell
 brew "shellcheck"
@@ -25,10 +23,18 @@ brew "wget"
 brew "zsh"
 
 # Apps
-# cask "alacritty"
-# cask "discord"
-# cask "google-chrome"
-# cask 'the-unarchiver'
+cask "alacritty"
+cask "cloudflare-warp"
+cask "discord"
+cask "google-chrome"
+cask "itsycal"
+cask "obsidian"
+cask "slack"
+cask "spotify"
+cask "sublime-text"
+cask "the-unarchiver"
+cask "visual-studio-code"
+cask "vlc"
 
 # Fonts
 cask "font-hack-nerd-font"

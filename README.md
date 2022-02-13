@@ -19,7 +19,7 @@ After running the script:
 
 ## Installation
 ```
-git clone git://github.com/devanshrj/dotfiles ~/.dotfiles
+git clone https://github.com/devanshrj/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 chmod +x install.sh
 ./install.sh
